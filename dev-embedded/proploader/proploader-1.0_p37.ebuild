@@ -20,11 +20,10 @@ RDEPEND="${DEPEND}"
 BDEPEND="dev-lang/openspin"
 
 # TODO: CFLAGS and stuff
+PATCHES="${FILESDIR}/${P}-makefile.patch"
 
-src_prepare() {
-	cp "${FILESDIR}/Makefile-${PV}" Makefile
-
-	default
+pkg_setup() {
+	export MY_PV
 }
 
 src_install() {
